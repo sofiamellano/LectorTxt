@@ -1,4 +1,5 @@
 using LectorTxt;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.IO;
 using System.Web;
@@ -152,6 +153,65 @@ namespace AbrirTxt
             else
             {
                 this.txtNombreArchivo.Clear();
+            }
+        }
+
+        private void jsonUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de texto (*.json)|*.json";
+            //| Todos los archivos(*.*)| *.*
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (!File.Exists(openFileDialog.FileName))
+                {
+                    MessageBox.Show("El archivo no existe!", "Redes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                string rutaArchivo = openFileDialog.FileName;
+                JSONUser jsonUser = new JSONUser();
+                jsonUser.JSONFile = rutaArchivo;
+                jsonUser.ShowDialog();
+            }
+        }
+
+        private void gifsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string version;
+            int alto = 0;
+            int ancho = 0;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de texto (*.gif)|*.gif";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = openFileDialog.FileName;
+                this.txtArchivoGif.Text = rutaArchivo;
+                byte[] contenido = File.ReadAllBytes(rutaArchivo);
+               
+                version = "" + Convert.ToChar( contenido[0])+ Convert.ToChar(contenido[1]) + Convert.ToChar(contenido[2]) + Convert.ToChar(contenido[3]) + Convert.ToChar(contenido[4]) + Convert.ToChar(contenido[5]);
+                txtVersionGif.Text = version;
+
+                ancho = contenido[7];
+                ancho = ancho << 8;
+                ancho = ancho | contenido[6];
+
+                alto = contenido[9];
+                alto = alto << 8;
+                alto = alto | contenido[8];
+
+                txtAltoGif.Text = alto.ToString();
+                txtAnchoGif.Text = ancho.ToString();
+            }
+            else
+            {
+                this.txtArchivoGif.Text = "";
+                this.txtVersionGif.Text = "";
+                this.txtAltoGif.Text = "";
+                this.txtAnchoGif.Text = "";
             }
         }
     }
