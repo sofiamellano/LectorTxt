@@ -191,8 +191,8 @@ namespace AbrirTxt
                 string rutaArchivo = openFileDialog.FileName;
                 this.txtArchivoGif.Text = rutaArchivo;
                 byte[] contenido = File.ReadAllBytes(rutaArchivo);
-               
-                version = "" + Convert.ToChar( contenido[0])+ Convert.ToChar(contenido[1]) + Convert.ToChar(contenido[2]) + Convert.ToChar(contenido[3]) + Convert.ToChar(contenido[4]) + Convert.ToChar(contenido[5]);
+
+                version = "" + Convert.ToChar(contenido[0]) + Convert.ToChar(contenido[1]) + Convert.ToChar(contenido[2]) + Convert.ToChar(contenido[3]) + Convert.ToChar(contenido[4]) + Convert.ToChar(contenido[5]);
                 txtVersionGif.Text = version;
 
                 ancho = contenido[7];
@@ -212,6 +212,77 @@ namespace AbrirTxt
                 this.txtVersionGif.Text = "";
                 this.txtAltoGif.Text = "";
                 this.txtAnchoGif.Text = "";
+            }
+        }
+
+        private void datosBMPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string version;
+            int alto = 0;
+            int ancho = 0;
+            int size = 0;
+
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de texto (*.bmp)|*.bmp";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = openFileDialog.FileName;
+                this.txtArchivoBPM.Text = rutaArchivo;
+                byte[] contenido = File.ReadAllBytes(rutaArchivo);
+
+
+                // calcular tamaño
+                size = contenido[5];
+                size = size << 8;
+                size = size | contenido[4];
+                size = size << 8;
+                size = size | contenido[3];
+                size = size << 8;
+                size = size | contenido[2];
+
+                // calcular ancho
+                ancho = contenido[19];
+                ancho = ancho << 8;
+                ancho = ancho | contenido[18];
+
+                // calcular alto
+                alto = contenido[23];
+                alto = alto << 8;
+                alto = alto | contenido[22];
+
+
+                txtAltoBPM.Text = alto.ToString();
+                txtAnchoBMP.Text = ancho.ToString();
+                txtSizeBPM.Text = size.ToString();
+            }
+            else
+            {
+                this.txtArchivoBPM.Text = "";
+                this.txtSizeBPM.Text = "";
+                this.txtAltoBPM.Text = "";
+                this.txtAnchoBMP.Text = "";
+            }
+        }
+
+        private void drawBMPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de texto (*.bmp)|*.bmp";
+            //| Todos los archivos(*.*)| *.*
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (!File.Exists(openFileDialog.FileName))
+                {
+                    MessageBox.Show("El archivo no existe!", "Redes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                string rutaArchivo = openFileDialog.FileName;
+                DrawBMP drawBMP = new DrawBMP();
+                drawBMP.FileBMP= rutaArchivo;
+                drawBMP.ShowDialog();
             }
         }
     }

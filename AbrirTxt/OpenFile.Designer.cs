@@ -36,25 +36,37 @@
             backUpNoComentToolStripMenuItem = new ToolStripMenuItem();
             morososToolStripMenuItem = new ToolStripMenuItem();
             jsonUsuariosToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            gifsToolStripMenuItem = new ToolStripMenuItem();
+            datosBMPToolStripMenuItem = new ToolStripMenuItem();
             label = new Label();
             txtNombreArchivo = new TextBox();
             label1 = new Label();
             txtNombreArchivoBackup = new TextBox();
             label2 = new Label();
             btnChoose = new Button();
-            toolStripSeparator1 = new ToolStripSeparator();
-            gifsToolStripMenuItem = new ToolStripMenuItem();
             groupBox1 = new GroupBox();
-            label3 = new Label();
-            txtVersionGif = new TextBox();
-            txtAnchoGif = new TextBox();
-            label4 = new Label();
-            txtAltoGif = new TextBox();
-            label5 = new Label();
             txtArchivoGif = new TextBox();
             label6 = new Label();
+            txtAltoGif = new TextBox();
+            label5 = new Label();
+            txtAnchoGif = new TextBox();
+            label4 = new Label();
+            txtVersionGif = new TextBox();
+            label3 = new Label();
+            groupBox2 = new GroupBox();
+            txtArchivoBPM = new TextBox();
+            label7 = new Label();
+            txtAltoBPM = new TextBox();
+            label8 = new Label();
+            txtAnchoBMP = new TextBox();
+            label9 = new Label();
+            txtSizeBPM = new TextBox();
+            label10 = new Label();
+            drawBMPToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // txtContenido
@@ -81,7 +93,7 @@
             // 
             // btnArchivo
             // 
-            btnArchivo.DropDownItems.AddRange(new ToolStripItem[] { openFileToolStripMenuItem, backupToolStripMenuItem, backUpNoComentToolStripMenuItem, morososToolStripMenuItem, jsonUsuariosToolStripMenuItem, toolStripSeparator1, gifsToolStripMenuItem });
+            btnArchivo.DropDownItems.AddRange(new ToolStripItem[] { openFileToolStripMenuItem, backupToolStripMenuItem, backUpNoComentToolStripMenuItem, morososToolStripMenuItem, jsonUsuariosToolStripMenuItem, toolStripSeparator1, gifsToolStripMenuItem, datosBMPToolStripMenuItem, drawBMPToolStripMenuItem });
             btnArchivo.Name = "btnArchivo";
             btnArchivo.Size = new Size(73, 24);
             btnArchivo.Text = "Archivo";
@@ -120,6 +132,25 @@
             jsonUsuariosToolStripMenuItem.Size = new Size(231, 26);
             jsonUsuariosToolStripMenuItem.Text = "Json Usuarios";
             jsonUsuariosToolStripMenuItem.Click += jsonUsuariosToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(228, 6);
+            // 
+            // gifsToolStripMenuItem
+            // 
+            gifsToolStripMenuItem.Name = "gifsToolStripMenuItem";
+            gifsToolStripMenuItem.Size = new Size(231, 26);
+            gifsToolStripMenuItem.Text = "Gif's";
+            gifsToolStripMenuItem.Click += gifsToolStripMenuItem_Click;
+            // 
+            // datosBMPToolStripMenuItem
+            // 
+            datosBMPToolStripMenuItem.Name = "datosBMPToolStripMenuItem";
+            datosBMPToolStripMenuItem.Size = new Size(231, 26);
+            datosBMPToolStripMenuItem.Text = "Datos BMP";
+            datosBMPToolStripMenuItem.Click += datosBMPToolStripMenuItem_Click;
             // 
             // label
             // 
@@ -172,18 +203,6 @@
             btnChoose.UseVisualStyleBackColor = true;
             btnChoose.Click += btnChoose_Click;
             // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(228, 6);
-            // 
-            // gifsToolStripMenuItem
-            // 
-            gifsToolStripMenuItem.Name = "gifsToolStripMenuItem";
-            gifsToolStripMenuItem.Size = new Size(231, 26);
-            gifsToolStripMenuItem.Text = "Gif's";
-            gifsToolStripMenuItem.Click += gifsToolStripMenuItem_Click;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(txtArchivoGif);
@@ -196,61 +215,10 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(1069, 61);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(491, 500);
+            groupBox1.Size = new Size(491, 458);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Gif's";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(124, 180);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Version:";
-            // 
-            // txtVersionGif
-            // 
-            txtVersionGif.Location = new Point(190, 180);
-            txtVersionGif.Name = "txtVersionGif";
-            txtVersionGif.ReadOnly = true;
-            txtVersionGif.Size = new Size(188, 27);
-            txtVersionGif.TabIndex = 1;
-            // 
-            // txtAnchoGif
-            // 
-            txtAnchoGif.Location = new Point(190, 411);
-            txtAnchoGif.Name = "txtAnchoGif";
-            txtAnchoGif.ReadOnly = true;
-            txtAnchoGif.Size = new Size(188, 27);
-            txtAnchoGif.TabIndex = 3;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(120, 414);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 20);
-            label4.TabIndex = 2;
-            label4.Text = "Ancho:";
-            // 
-            // txtAltoGif
-            // 
-            txtAltoGif.Location = new Point(190, 296);
-            txtAltoGif.Name = "txtAltoGif";
-            txtAltoGif.ReadOnly = true;
-            txtAltoGif.Size = new Size(188, 27);
-            txtAltoGif.TabIndex = 5;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(124, 296);
-            label5.Name = "label5";
-            label5.Size = new Size(40, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Alto:";
             // 
             // txtArchivoGif
             // 
@@ -269,11 +237,155 @@
             label6.TabIndex = 6;
             label6.Text = "Archivo:";
             // 
+            // txtAltoGif
+            // 
+            txtAltoGif.Location = new Point(190, 296);
+            txtAltoGif.Name = "txtAltoGif";
+            txtAltoGif.ReadOnly = true;
+            txtAltoGif.Size = new Size(188, 27);
+            txtAltoGif.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(124, 296);
+            label5.Name = "label5";
+            label5.Size = new Size(40, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Alto:";
+            // 
+            // txtAnchoGif
+            // 
+            txtAnchoGif.Location = new Point(190, 411);
+            txtAnchoGif.Name = "txtAnchoGif";
+            txtAnchoGif.ReadOnly = true;
+            txtAnchoGif.Size = new Size(188, 27);
+            txtAnchoGif.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(120, 414);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 20);
+            label4.TabIndex = 2;
+            label4.Text = "Ancho:";
+            // 
+            // txtVersionGif
+            // 
+            txtVersionGif.Location = new Point(190, 180);
+            txtVersionGif.Name = "txtVersionGif";
+            txtVersionGif.ReadOnly = true;
+            txtVersionGif.Size = new Size(188, 27);
+            txtVersionGif.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(124, 180);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Version:";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txtArchivoBPM);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(txtAltoBPM);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(txtAnchoBMP);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(txtSizeBPM);
+            groupBox2.Controls.Add(label10);
+            groupBox2.Location = new Point(1069, 525);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(491, 279);
+            groupBox2.TabIndex = 10;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Datos BMP";
+            // 
+            // txtArchivoBPM
+            // 
+            txtArchivoBPM.Location = new Point(73, 71);
+            txtArchivoBPM.Name = "txtArchivoBPM";
+            txtArchivoBPM.ReadOnly = true;
+            txtArchivoBPM.Size = new Size(397, 27);
+            txtArchivoBPM.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(7, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 20);
+            label7.TabIndex = 6;
+            label7.Text = "Archivo:";
+            // 
+            // txtAltoBPM
+            // 
+            txtAltoBPM.Location = new Point(124, 180);
+            txtAltoBPM.Name = "txtAltoBPM";
+            txtAltoBPM.ReadOnly = true;
+            txtAltoBPM.Size = new Size(188, 27);
+            txtAltoBPM.TabIndex = 5;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(73, 183);
+            label8.Name = "label8";
+            label8.Size = new Size(40, 20);
+            label8.TabIndex = 4;
+            label8.Text = "Alto:";
+            // 
+            // txtAnchoBMP
+            // 
+            txtAnchoBMP.Location = new Point(124, 234);
+            txtAnchoBMP.Name = "txtAnchoBMP";
+            txtAnchoBMP.ReadOnly = true;
+            txtAnchoBMP.Size = new Size(188, 27);
+            txtAnchoBMP.TabIndex = 3;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(59, 237);
+            label9.Name = "label9";
+            label9.Size = new Size(54, 20);
+            label9.TabIndex = 2;
+            label9.Text = "Ancho:";
+            // 
+            // txtSizeBPM
+            // 
+            txtSizeBPM.Location = new Point(124, 127);
+            txtSizeBPM.Name = "txtSizeBPM";
+            txtSizeBPM.ReadOnly = true;
+            txtSizeBPM.Size = new Size(254, 27);
+            txtSizeBPM.TabIndex = 1;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(6, 130);
+            label10.Name = "label10";
+            label10.Size = new Size(113, 20);
+            label10.TabIndex = 0;
+            label10.Text = "Tamaño (Bytes):";
+            // 
+            // drawBMPToolStripMenuItem
+            // 
+            drawBMPToolStripMenuItem.Name = "drawBMPToolStripMenuItem";
+            drawBMPToolStripMenuItem.Size = new Size(231, 26);
+            drawBMPToolStripMenuItem.Text = "Draw BMP";
+            drawBMPToolStripMenuItem.Click += drawBMPToolStripMenuItem_Click;
+            // 
             // OpenFile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1564, 599);
+            ClientSize = new Size(1564, 811);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(btnChoose);
             Controls.Add(txtNombreArchivoBackup);
@@ -291,6 +403,8 @@
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,5 +435,16 @@
         private Label label4;
         private TextBox txtVersionGif;
         private Label label3;
+        private ToolStripMenuItem datosBMPToolStripMenuItem;
+        private GroupBox groupBox2;
+        private TextBox txtArchivoBPM;
+        private Label label7;
+        private TextBox txtAltoBPM;
+        private Label label8;
+        private TextBox txtAnchoBMP;
+        private Label label9;
+        private TextBox txtSizeBPM;
+        private Label label10;
+        private ToolStripMenuItem drawBMPToolStripMenuItem;
     }
 }
